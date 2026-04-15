@@ -1,0 +1,132 @@
+.wrapper {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+
+.container {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+    label {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    select,
+    textarea {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: sans-serif;
+
+      &:focus {
+        border-color: #000000;
+        outline: none;
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+    background-color: #4090f2;      
+    box-shadow: 0 4px 10px rgba(59,130,246,0.5);
+    }
+  }
+}
+
+.requests-panel {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  h3 {
+    margin-bottom: 15px;
+  }
+
+  .empty {
+    color: #777;
+  }
+
+  .request-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  background: #f9fafb;
+
+  .status-row {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+  }
+
+  .status-badge {
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .pending {
+    background: #fef3c7;
+    color: #d97706;
+  }
+
+  .approved {
+    background: #dcfce7;
+    color: #16a34a;
+  }
+
+  .rejected {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+
+  .status-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .status-btn:hover {
+    background: #1d4ed8;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
+}
