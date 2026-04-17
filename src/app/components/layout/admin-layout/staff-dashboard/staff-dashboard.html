@@ -1,0 +1,32 @@
+<div class="dashboard-container">
+  <h2 class="welcome-text">Welcome, Staff User</h2>
+
+  <div class="cards">
+    <div class="card blue">
+      <i class="pi pi-users"></i>
+      <p>Total Residents</p>
+      <h1>{{ totalResidents }}</h1>
+    </div>
+
+    <div class="card orange">
+      <i class="pi pi-home"></i>
+      <p>Total Households</p>
+      <h1>{{ totalHouseholds }}</h1>
+    </div>
+
+    <div class="card green">
+      <i class="pi pi-heart"></i>
+      <p>Senior Citizens</p>
+      <h1>{{ seniorCitizens }}</h1>
+    </div>
+  </div>
+
+  <div class="dashboard-box">
+    <div class="dashboard-header">
+      <h3>Dashboard</h3>
+      <button class="view-btn" (click)="viewRequests()">
+        View All Requests
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+<div class="requests-container">
+
+  <div class="cards">
+    <div class="card total">
+      <i class="pi pi-list-check"></i>
+      <div>
+        <h2>{{ total }}</h2>
+        <p>Total Requests</p>
+      </div>
+    </div>
+
+    <div class="card approved">
+      <i class="pi pi-check"></i>
+      <div>
+        <h2>{{ approved }}</h2>
+        <p>Approved</p>
+      </div>
+    </div>
+
+    <div class="card pending">
+      <i class="pi pi-clock"></i>
+      <div>
+        <h2>{{ pending }}</h2>
+        <p>Pending</p>
+      </div>
+    </div>
+
+    <div class="card review">
+      <i class="pi pi-eye"></i>
+      <div>
+        <h2>{{ review }}</h2>
+        <p>Rejected</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="filters">
+
+    <div class="search-box">
+      <i class="pi pi-search"></i>
+      <input
+        type="text"
+        placeholder="Search by type or purpose..."
+        [(ngModel)]="searchTerm"
+        (input)="applyFilters()"
+      />
+    </div>
+
+    <div class="filter-group">
+      <label>Status:</label>
+      <select [(ngModel)]="statusFilter" (change)="applyFilters()">
+        <option value="">All</option>
+        <option value="Approved">Approved</option>
+        <option value="Pending">Pending</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+    </div>
+
+    <div class="sort-group">
+      <span>Sort by:</span>
+      <button (click)="setSort('date')">Date</button>
+      <button (click)="setSort('type')">Type</button>
+      <button (click)="setSort('status')">Status</button>
+    </div>
+
+  </div>
+
+  <div class="table-card">
+
+    <table *ngIf="filteredRequests.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Type</th>
+          <th>Purpose</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let req of filteredRequests">
+          <td>{{ req.id }}</td>
+          <td>{{ req.certificateType }}</td>
+          <td>{{ req.purpose }}</td>
+
+          <td>
+            <span 
+              [ngClass]="{
+                'approved': req.status === 'Approved',
+                'pending': req.status === 'Pending',
+                'rejected': req.status === 'Rejected'
+              }">
+              {{ req.status }}
+            </span>
+          </td>
+
+          <td>{{ req.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="filteredRequests.length === 0" class="no-data">
+      No requests found
+    </div>
+
+  </div>
+
+</div>
+

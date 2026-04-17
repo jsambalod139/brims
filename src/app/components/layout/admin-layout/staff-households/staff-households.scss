@@ -1,0 +1,58 @@
+.households-container {
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+
+  input,
+  select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  input {
+    flex: 1;
+  }
+}
+
+.table-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+    padding: 12px;
+    font-size: 14px;
+    color: #6c757d;
+    border-bottom: 1px solid #eee;
+  }
+
+  td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-style: italic;
+}
